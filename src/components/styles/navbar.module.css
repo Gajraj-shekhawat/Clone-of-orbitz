@@ -30,7 +30,7 @@
 
 .navbar_right_options_div>nav {
     display: flex;
-    gap: 15px
+    gap: 30px
 }
 
 .navbar_right_options_div>nav>a {
@@ -40,19 +40,21 @@
 
 .navbar_right_options_div>nav>a:hover {
     color: #007e8f
+    
 }
 
-.signin {
+.signin:hover {
     cursor: pointer;
-    /* margin-right:20% */
+    color: #00a4bb;
+  
 
 }
 
 
 /* test */
-.signin_popup{
-    height: 350px;
-    width: 330px;
+.signin_popup {
+    
+    width: 350px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     border-radius: 10px;
 
@@ -60,34 +62,57 @@
 
     position: absolute;
     color: black;
-    /* border:1px solid red; */
-    right: 20%;
-    top: 60px;
-    background:white;
-    padding:15px
-}
-.signin_btn{
    
-        height: 35px;
-       
-        margin: auto;
-      
-        border-radius: 5px;
-       
-        background-color: #c83259;
-        cursor: pointer;
-        
-        display: flex;
-        place-items: center;
-        justify-content: center;
+    right: 20%;
+    top: 38px;
+    background: white;
+    padding: 15px;
+   
+    
 }
-.signin_btn>a{
+
+.signin{
+    position: relative;
+}
+
+.signin_btn {
+
+    height: 35px;
+
+    margin: auto;
+
+    border-radius: 5px;
+
+    background-color: #c83259;
+    cursor: pointer;
+
+    display: flex;
+    place-items: center;
+    justify-content: center;
+}
+
+.signin_btn>a {
     text-decoration: none;
     color: white
+}.signin_btn:hover{
+    background:rgb(226, 53, 53)
 }
-.signup_btn{
+
+.signup_btn {
     color: #00a4bb;
-        text-decoration: none;
-        text-align: center;
-        margin-left: 90px;
+    text-decoration: none;
+    text-align: center;
+    margin-left: 90px;
+}
+
+.signup_btn:hover {
+    color: black
+}
+
+.otherLinks>p>a{
+    color: black;
+    text-decoration: none;
+}
+.otherLinks>p>a:hover{
+    color: #00a4bb;
 }
