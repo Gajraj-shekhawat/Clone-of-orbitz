@@ -1,0 +1,234 @@
+.img_container {
+    background-image: url(https://forever.travel-assets.com/flex/flexmanager/images/2021/11/01/ORB_Storefront_6_imgB_1400x600_20211028.jpg?impolicy=fcrop&w=900&h=506&q=mediumHigh);
+    height: 500px;
+    background-size: cover;
+    background-position: 0%;
+    position: relative;
+}
+
+.search_inner_part {
+    position: absolute;
+    background-color: white;
+    width: 70%;
+    left: 15%;
+    top: 40px;
+    padding: 15px 20px 60px 20px;
+    border-radius: 8px;
+
+}
+
+.search_heading {
+    display: flex;
+    column-gap: 30px;
+    justify-content: center;
+    font-weight: 500;
+
+
+}
+
+.search_heading>div {
+    padding-bottom: 10px;
+}
+
+.search_heading>div:hover {
+    cursor: pointer;
+    border-bottom: 3px solid #00a4bb;
+    color: #00a4bb;
+}
+
+.input_stays {
+    display: flex;
+    justify-content: center;
+    column-gap: 15px;
+}
+
+.input_stays>div:first-child {
+    width: 40%;
+    font-size: 2.2rem;
+
+    border: 1px solid rgb(170, 168, 168);
+        border-radius: 4px;
+        color: rgb(94, 92, 92);
+        height: 50px;
+        width: 42%;
+        margin-right: 12px;
+        display: flex;
+        align-items: center;
+        /* text-align: start; */
+        /* font-size: 18px; */
+        padding-left: 18px;
+        box-sizing: border-box;
+        gap: 10px
+
+}
+.input_stays>div:first-child>input{
+    outline: none;
+    border: none;
+        font-size: 18px;
+}
+
+.checkin_div,
+.checkout_div {
+    width: 15%;
+    font-size: 1rem;
+    border: 1px solid rgb(71, 66, 66);
+    line-height: 1px;
+    padding-left: 10px;
+}
+
+.room_details {
+    display: flex;
+    place-items: center;
+    border: 1px solid rgb(71, 66, 66);
+    width: 20%;
+    padding-left: 10px;
+    gap: 15px
+}
+
+.input_stays input:focus {
+    outline: none;
+}
+
+.stays_checkbox {
+    display: flex;
+    gap: 80px;
+    margin-left: 15px;
+}
+
+.stays_saerch {
+    margin: auto;
+
+    width: 200px;
+}
+
+.stays_saerch>button {
+    background: #c83259;
+    padding: 10px 50px 10px 50px;
+    font-size: 1.2rem;
+    color: white;
+    border-radius: 5px;
+    border: none;
+
+}
+
+/* flight */
+
+.flight_first_box {
+    display: flex;
+    justify-content: space-between
+}
+
+.booking_types {
+    display: flex;
+    justify-content: space-between;
+}
+.booking_types>p {
+    padding: 10px 25px;
+    margin-right: 10px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.booking_types>p:nth-child(1) {
+    background-color: #b2d8dd;
+}
+
+.booking_types>p:hover {
+    background-color: #b2d8dd;
+    cursor: pointer;
+}
+.travelingPerson {
+    margin-left: 20px;
+    border: none;
+    font-size: 13px;
+    color: teal;
+}
+
+.travelingPerson:focus {
+    outline: none;
+}
+
+.travelingPerson:hover {
+    text-decoration: underline;
+}
+.input_panels {
+    display: flex;
+    margin-top: 20px;
+}
+.leaving_from,.flight_going_to{
+    border: 1px solid rgb(170, 168, 168);
+        border-radius: 4px;
+        color: rgb(94, 92, 92);
+        height: 50px;
+        width: 42%;
+        margin-right: 12px;
+        display: flex;
+        align-items: center;
+        /* text-align: start; */
+        /* font-size: 18px; */
+        padding-left: 18px;
+        box-sizing: border-box;
+        gap:10px
+}
+.leaving_from>input:focus,.flight_going_to>input:focus{
+outline: none;
+}
+
+.leaving_from>input,.flight_going_to>input{
+    border: none;
+    font-size: 18px;
+}
+.checkin{
+    border: 1px solid rgb(170, 168, 168);
+        border-radius: 2px;
+        height: 50px;
+        padding: 0 30px 0 8px;
+        margin-right: 10px;
+        text-align: start;
+        box-sizing: border-box;
+}
+.checkin>p
+ {
+    margin: 2px 0px;
+    font-size: 13px;
+    color: rgb(94, 92, 92);
+}
+.checkin_input,
+.checkout_input {
+    width: 100%;
+    font-size: 16px;
+    border: none;
+}
+
+.checkin_input:focus,
+.checkout_input:focus {
+    outline: none;
+}
+.checkin,
+.checkout {
+
+
+    border: 1px solid rgb(170, 168, 168);
+    border-radius: 2px;
+    height: 50px;
+    padding: 0 30px 0 8px;
+    margin-right: 10px;
+    text-align: start;
+    box-sizing: border-box;
+}
+
+.checkin>p,
+.checkout>p {
+    margin: 2px 0px;
+    font-size: 13px;
+    color: rgb(94, 92, 92);
+}
+.checkboxes {
+    text-align: start;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: rgb(94, 92, 92);
+}
+.addcar {
+    margin-left: 70px;
+}
