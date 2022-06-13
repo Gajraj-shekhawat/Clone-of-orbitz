@@ -60,7 +60,7 @@
     outline: none;
     border: none;
     font-size: 18px;
-    
+
 }
 
 .checkin_div,
@@ -72,7 +72,7 @@
     line-height: 1px;
     padding-left: 10px;
     border-radius: 4px;
-    padding:7px
+    padding-bottom: 5px;
 }
 
 .room_details {
@@ -89,7 +89,8 @@
 .input_stays input:focus {
     outline: none;
 }
-.input_stays input{
+
+.input_stays input {
     color: rgb(94, 92, 92);
 
 }
@@ -285,4 +286,130 @@
 
 .cars_input_panels>div:nth-child(6) {
     grid-area: f;
+}
+
+.choose {
+    font-size: 13px;
+    text-align: start;
+}
+
+.packages_add_buttons>p {
+    border: 1px solid;
+    border-radius: 20px;
+    padding: 5px 10px;
+
+}
+
+.return {
+    margin-right: 0;
+}
+
+.things_going_to {
+    width: 56.5%;
+    margin-bottom: 30px;
+
+}
+
+.things_going_to+div,
+.things_going_to+div+div {
+    width: 21%;
+}
+
+.things_going_to+div>input,
+.things_going_to+div+div>input {
+    width: 70%;
+}
+
+.going_to {
+    border: 1px solid rgb(170, 168, 168);
+    border-radius: 2px;
+    font-weight: 500;
+    height: 50px;
+    width: 42%;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    text-align: start;
+    font-size: 18px;
+    padding-left: 18px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.going_to>span {
+    margin-right: 10px;
+    color: rgb(94, 92, 92)
+}
+
+.cruise {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.cruise_destionation_dropdown {
+    width: 100%;
+    border: none;
+}
+
+.cruise_destionation_dropdown:focus {
+    outline: none;
+}
+
+.travel_box {
+    border: 1px solid rgb(170, 168, 168);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    width: 26%;
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.cruise_travel_box {
+    width: 100%;
+    height: 50px;
+}
+
+.travel_count_div {
+    display: grid;
+    grid-template-areas:
+        "a a"
+        "b c";
+    padding-left: 10px;
+    box-sizing: border-box;
+}
+
+.travelers {
+    grid-area: a;
+    margin: 0;
+    text-align: start;
+    font-size: 14px;
+    color: rgb(94, 92, 92);
+}
+
+.cruise_person_count {
+    margin: 0;
+}
+
+.cruise_depart {
+    margin-right: 0;
+}
+
+.cruise_depart>input {
+    width: 25%;
+}
+
+.select_destination {
+    border: 1px solid rgb(168, 167, 167);
+    height: 50px;
+    text-align: start;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.select_destination>p {
+    margin: 0;
+    font-size: 13px;
 }
