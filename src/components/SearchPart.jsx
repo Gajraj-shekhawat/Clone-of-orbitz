@@ -149,6 +149,48 @@ const SearchPart = () => {
                             <button>Search</button>
                         </div>
                     </div>}
+                {showtab.cars &&
+                    <div>
+                        <div className={styles.flight_first_box}>
+                            <div className={styles.booking_types}>
+                                <p>Rental cars</p>
+                                <p>Airport tranportation</p>
+                            </div>
+                        </div>
+
+                        <div className={styles.cars_input_panels}>
+                            <div class="leaving_from">
+                                <span class="material-symbols-outlined"> pin_drop </span>Pick-up
+                            </div>
+                            <div class="flight_going_to">
+                                <span class="material-symbols-outlined"> pin_drop </span>
+                                Same as pick-up
+                            </div>
+                            <div class="checkin">
+                                <p>Pick-up date</p>
+                                <input type="date" class="checkin_input" />
+                            </div>
+                            <div class="checkout" id="return">
+                                <p>Drop-of date</p>
+                                <input type="date" class="checkout_input" />
+                            </div>
+                            <div class="checkin">
+                                <p>Pick-up time</p>
+                                <input type="time" class="checkin_input" />
+                            </div>
+                            <div class="checkout" id="return">
+                                <p>Drop-of time</p>
+                                <input type="time" class="checkout_input" />
+                            </div>
+                        </div>
+
+                        <div class="checkboxes">
+                            <input type="checkbox" class="addflight" /> Include AARP member
+                            rates
+                        </div>
+                        <button class="submit">Search</button>
+                </div>
+                }
             </div>
         </div>
     );
