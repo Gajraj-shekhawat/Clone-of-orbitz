@@ -171,6 +171,8 @@ const HomepageBody = () => {
                 </div>
             </div>
 
+            {/* more destination? */}
+
 
         </div>
     )

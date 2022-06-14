@@ -2,7 +2,9 @@ import React from 'react'
 
 const Countries = () => {
     return (
-        <><option value="1268">Antigua &amp; Barbuda (+1268)</option>
+        <>
+            <option value="91">India (+91)</option>
+            <option value="1268">Antigua &amp; Barbuda (+1268)</option>
             <option value="54">Argentina (+54)</option>
             <option value="374">Armenia (+374)</option>
             <option value="61">Australia (+61)</option>
@@ -56,7 +58,6 @@ const Countries = () => {
             <option value="852">Hong Kong (+852)</option>
             <option value="36">Hungary (+36)</option>
             <option value="354">Iceland (+354)</option>
-            <option value="91">India (+91)</option>
             <option value="62">Indonesia (+62)</option>
             <option value="98">Iran (+98)</option>
             <option value="964">Iraq (+964)</option>
