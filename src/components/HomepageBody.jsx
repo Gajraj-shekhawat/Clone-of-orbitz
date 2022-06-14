@@ -3,6 +3,7 @@ import styles from './styles/homepageBody.module.css'
 import { AiTwotoneEdit } from 'react-icons/ai'
 import { MdMonetizationOn, MdForum } from 'react-icons/md'
 import Countries from './Countries'
+import { IoIosArrowDown } from 'react-icons/io'
 
 const HomepageBody = () => {
     return (
@@ -149,12 +150,12 @@ const HomepageBody = () => {
 
                     <h4>Text yourself a download link</h4>
                     <div className={styles.download_link}>
-                    <select className={styles.country_codes}>
-                        <Countries/>
-                    </select>
-                    <input type="number" className={styles.app_number} placeholder="Phone Number" />
-                    <div className={styles.stays_saerch}>
-                        <button>Get the app</button>
+                        <select className={styles.country_codes}>
+                            <Countries />
+                        </select>
+                        <input type="number" className={styles.app_number} placeholder="Phone Number" />
+                        <div className={styles.stays_saerch}>
+                            <button>Get the app</button>
                         </div>
                     </div>
                     <p className={styles.message}>
@@ -171,7 +172,39 @@ const HomepageBody = () => {
                 </div>
             </div>
 
-            {/* more destination? */}
+            {/* more destination? below*/}
+            <div className={styles.more_destination}>
+                <h2>More destinations</h2>
+                <div>
+                    <div>
+                        <h4>Destination deals</h4>
+                        <IoIosArrowDown style={{ cursor: "pointer", fontSize: "1.3rem" }}/>
+                    </div>
+                    <div>
+                        <h4>Top hotel beach destination</h4>
+                        <IoIosArrowDown style={{ cursor: "pointer", fontSize: "1.3rem" }}/>
+                    </div>
+                    <div>
+                        <h4>Top hotel city destination</h4>
+                        <IoIosArrowDown style={{ cursor: "pointer", fontSize: "1.3rem" }}/>
+                    </div>
+                    
+                </div>
+                <div>
+                    <div>
+                        <h4>Top Vacation destination</h4>
+                        <IoIosArrowDown style={{ cursor: "pointer", fontSize: "1.3rem" }}/>
+                    </div>
+                    <div>
+                        <h4>Top flight destination</h4>
+                        <IoIosArrowDown style={{ cursor: "pointer", fontSize: "1.3rem" }}/>
+                    </div>
+                    <div>
+                        <h4>Top car rental destination in America</h4>
+                        <IoIosArrowDown style={{ cursor: "pointer", fontSize: "1.3rem" }}/>
+                    </div>
+                </div>
+            </div>
 
 
         </div>
