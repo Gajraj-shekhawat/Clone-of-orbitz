@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styles from './styles/searchPart.module.css';
-import { BsFillPersonFill } from 'react-icons/bs';
+import { BsFillPersonFill,  } from 'react-icons/bs';
 import { MdLocationOn } from 'react-icons/md';
-
+import {Link} from 'react-router-dom'
+import axios from 'axios';
 const initialState = {
     stays: false,
     flights: false,
@@ -19,14 +20,28 @@ const tabActive = {
 const SearchPart = () => {
     const [showtab, setShowTab] = useState(initialState);
 
+    const [result, setResult] = useState(false)
+
+    const [query, setQuery] = useState('')
+
+    const [cityName,setCityName]=useState()
+    
+    const handleChnage = (e) => {
+        setQuery(e.target.value)
+        axios.get(`https://json-dummy-server-gajraj.herokuapp.com/hotel?q=${query}`).then(res => {
+            console.log(res.data)
+        })
+
+    }
+
     useEffect(() => {
         setShowTab({ ...showtab, stays: true });
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     return (
-        <div className={styles.img_container}>
+        <div className={styles.img_container} >
             <div className={styles.search_inner_part}>
-                <div className={styles.search_heading}>
+                <div className={styles.search_heading} onClick={() => setResult(false)}>
                     <div
                         style={showtab.stays ? tabActive : null}
                         onClick={() => {
@@ -81,12 +96,26 @@ const SearchPart = () => {
                 {showtab.stays && (
                     <div>
                         <div className={styles.input_stays}>
-                            <div>
+                            <div style={{ position: "relative" }}>
                                 <MdLocationOn fontSize={'1.4rem'} />
-                                <input type="text" placeholder="Going to" />
+                                <input type="text" placeholder="Going to" onFocus={() => { setResult(true) }} />
+
+                                {result && <div className={styles.search_content}>
+                                    <input type="text" name="" placeholder='Where are you going?' onChange={handleChnage}/>
+                                    <hr />
+                                    <div>
+                                     <Link to=''></Link>
+                            
+                                    </div>
+
+
+
+
+                                </div>}
                             </div>
 
-                            <div className={styles.checkin_div}>
+
+                            <div className={styles.checkin_div} onClick={() => setResult(false)}>
                                 <p>check-in</p>
                                 <input
                                     type="date"
@@ -94,14 +123,14 @@ const SearchPart = () => {
                                 />
                             </div>
 
-                            <div className={styles.checkout_div}>
+                            <div className={styles.checkout_div} onClick={() => setResult(false)}>
                                 <p>check-in</p>
                                 <input
                                     type="date"
                                     style={{ border: 'none', fontSize: '1.1rem' }}
                                 />
                             </div>
-                            <div className={styles.room_details}>
+                            <div className={styles.room_details} onClick={() => setResult(false)}>
                                 <div>
                                     <BsFillPersonFill fontSize={'1.3rem'} />
                                 </div>
