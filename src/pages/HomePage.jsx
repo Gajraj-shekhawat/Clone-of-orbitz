@@ -1,5 +1,6 @@
 import React from 'react'
 import Footer from '../components/Footer'
+import HelpBox from '../components/HelpBox'
 import HomepageBody from '../components/HomepageBody'
 import Navbar from '../components/Navbar'
 import SearchPart from '../components/SearchPart'
@@ -11,6 +12,7 @@ const HomePage = () => {
             <SearchPart />
             <HomepageBody />
             <Footer />
+            <HelpBox/>
         </div>
     )
 }

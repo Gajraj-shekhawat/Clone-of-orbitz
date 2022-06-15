@@ -1,0 +1,30 @@
+.help_button {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 0 20px 30px 0;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    color: teal;
+    background-color: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.help_button>MdForum {
+    font-size: 15px;
+    /* font-weight: bold */
+}
+
+.help_button>p {
+    margin: 0;
+    padding-left: 10px;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
