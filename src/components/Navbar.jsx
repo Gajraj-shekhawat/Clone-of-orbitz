@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styles from './styles/navbar.module.css';
 import { RiHotelFill } from 'react-icons/ri';
@@ -7,10 +7,12 @@ import { MdOutlineFlight } from 'react-icons/md';
 import { BsFillInboxesFill } from 'react-icons/bs';
 
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
-import withClickOutside from '../util/withClickOutside';
 
-const Navbar = forwardRef(
-  ({ showMoreTravel, setShowMoreTravel, setShowSignIn, showSignIn }, ref) => {
+
+const Navbar = () => {
+  const [showMoreTravel, setShowMoreTravel] = useState(false);
+  const [showSignIn, setShowSignIn] = useState(false);
+
     return (
       <div className={styles.navbar_container}>
         <div className={styles.navbar_logo_div}>
@@ -21,58 +23,58 @@ const Navbar = forwardRef(
             />
           </Link>
           {/* <section ref={ref}> */}
+          <div
+            className={styles.more_travel_parent_div}
+            onClick={() => {
+              setShowMoreTravel(!showMoreTravel);
+              setShowSignIn(false);
+            }}
+          >
             <div
-              className={styles.more_travel_parent_div}
-              onClick={() => {
-                setShowMoreTravel(!showMoreTravel);
-                setShowSignIn(false);
-              }}
+              style={showMoreTravel ? { color: '#00a4bb' } : null}
+              className={styles.more_travel_btn}
             >
-              <div
-                style={showMoreTravel ? { color: '#00a4bb' } : null}
-                className={styles.more_travel_btn}
-              >
-                <p>More travel</p>
+              <p>More travel</p>
 
-                {showMoreTravel ? (
-                  <BiChevronUp fontSize={'1.3rem'} />
-                ) : (
-                  <BiChevronDown fontSize={'1.3rem'} />
-                )}
-              </div>
-
-              {showMoreTravel && (
-                <div className={styles.more_travel_dropdown}>
-                  <div>
-                    {' '}
-                    <RiHotelFill fontSize={'1.3rem'} />
-                    <p> Stays</p>
-                  </div>
-                  <div>
-                    <MdOutlineFlight fontSize={'1.3rem'} />
-                    <p>Flights</p>
-                  </div>
-                  <div>
-                    <RiSuitcase2Fill fontSize={'1.3rem'} />
-                    <p>Packages</p>
-                  </div>
-                  <div>
-                    <RiCarFill fontSize={'1.3rem'} /> <p>Car</p>
-                  </div>
-                  <div>
-                    <RiShipFill fontSize={'1.3rem'} />
-                    <p>Cruises</p>
-                  </div>
-                  <div>
-                    <BsFillInboxesFill fontSize={'1.3rem'} />
-                    <p>Things to do</p>
-                  </div>
-                  <p>Deals</p>
-                  <p>Group & meetings</p>
-                  <p>Travel Blog</p>
-                </div>
+              {showMoreTravel ? (
+                <BiChevronUp fontSize={'1.3rem'} />
+              ) : (
+                <BiChevronDown fontSize={'1.3rem'} />
               )}
             </div>
+
+            {showMoreTravel && (
+              <div className={styles.more_travel_dropdown}>
+                <div>
+                  {' '}
+                  <RiHotelFill fontSize={'1.3rem'} />
+                  <p> Stays</p>
+                </div>
+                <div>
+                  <MdOutlineFlight fontSize={'1.3rem'} />
+                  <p>Flights</p>
+                </div>
+                <div>
+                  <RiSuitcase2Fill fontSize={'1.3rem'} />
+                  <p>Packages</p>
+                </div>
+                <div>
+                  <RiCarFill fontSize={'1.3rem'} /> <p>Car</p>
+                </div>
+                <div>
+                  <RiShipFill fontSize={'1.3rem'} />
+                  <p>Cruises</p>
+                </div>
+                <div>
+                  <BsFillInboxesFill fontSize={'1.3rem'} />
+                  <p>Things to do</p>
+                </div>
+                <p>Deals</p>
+                <p>Group & meetings</p>
+                <p>Travel Blog</p>
+              </div>
+            )}
+          </div>
           {/* </section> */}
         </div>
         <div className={styles.navbar_right_options_div}>
@@ -82,7 +84,7 @@ const Navbar = forwardRef(
             <NavLink to="#">Support</NavLink>
             <NavLink to="#">Trips</NavLink>
           </nav>
-          <section ref={ref}>
+          {/* <section ref={ref}> */}
             <div
               className={styles.signin}
               onClick={() => {
@@ -97,11 +99,11 @@ const Navbar = forwardRef(
                   <h4>
                     Members can access discounts, points and special features
                   </h4>
-                  <div className={styles.signin_btn}>
-                    <Link to="#">Sign in</Link>
-                  </div>
+                <Link style={{textDecoration:"none",color: 'white'}} to="signin" className={styles.signin_btn}>
+                    <p >Sign in</p>
+                  </Link>
                   <h4>
-                    <Link className={styles.signup_btn} to="#">
+                    <Link className={styles.signup_btn} to="/signup">
                       Create a free accaunt
                     </Link>
                   </h4>
@@ -120,12 +122,11 @@ const Navbar = forwardRef(
                 </div>
               )}
             </div>
-          </section>
+          {/* </section> */}
         </div>
       </div>
-      // </section>
+      
     );
   }
-);
 
-export default withClickOutside(Navbar);
+export default Navbar;
