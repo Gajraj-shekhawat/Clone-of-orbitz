@@ -1,3 +1,5 @@
+
+
 import React from 'react'
 import styles from './styles/footer.module.css'
 
@@ -51,7 +53,7 @@ const Footer = () => {
         </div>
       </div>
       <hr />
-      <div class={styles.bottom_line}>
+      <div className={styles.bottom_line}>
         <p>© 2022 Orbitz, LLC, an Expedia Group Company. All rights reserved. </p>
         <p>  Orbitz, Orbitz.com, and the Orbitz logo are trademarks or registered trademarks of Orbitz, LLC. CST# 2083930-50.</p>
 
