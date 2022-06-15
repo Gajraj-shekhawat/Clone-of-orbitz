@@ -1,8 +1,26 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, Navigate } from 'react-router-dom'
+import { signin_attemp } from '../redux/auth/action'
 import styles from './styles/signin.module.css'
 
 const SignIn = () => {
+  const auth = useSelector(state=>state.Auth.auth)
+
+
+  const dispatch = useDispatch()
+  const initialState = { email: '', password: "" }
+
+  const [loginData, setLoginData] = useState(initialState)
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    dispatch(signin_attemp(loginData))
+  }
+
+  if (auth) {
+    return <Navigate to='/'/>
+  }
   return (
     <div className={styles.signin_container}>
       <div className={styles.logo_back}>
@@ -15,43 +33,51 @@ const SignIn = () => {
         </Link>
         <hr />
       </div>
-      <div className={styles.signin_div}>
-        <h1>Sign in</h1>
-        <input type="email" name="email" placeholder='Email address' />
-        <input type="password" name="password" placeholder="Password" />
-      <div>
-        <input
-          className={styles.checkbox}
-          type="checkbox"
-          />
-        Keep me signed in
-      </div>
-      <p className={styles.term_conditions}>
-        By creating an account, I agree to the Orbitz{' '}
-        <span>Terms and Conditions</span>,
-        <span>Privacy Statement</span> and{' '}
-        <span> Orbitz Rewards Terms and Conditions</span>.
-      </p>
+      <form onSubmit={handleSubmit}>
+        <div className={styles.signin_div}>
+          <h1>Sign in</h1>
+          <input type="email" name="email" placeholder='Email address' onChange={e => { setLoginData({ ...loginData, [e.target.name]: e.target.value }) }} />
+          <input type="password" name="password" placeholder="Password" onChange={e => { setLoginData({ ...loginData, [e.target.name]: e.target.value }) }} />
+          <div>
+            <input
+              className={styles.checkbox}
+              type="checkbox"
+            />
+            Keep me signed in
           </div>
-      <div className={styles.end_div}>
-        <button disabled className={styles.button} type="submit">Continue</button>
-
-        <Link to=''>Forgot Password</Link>
-        <p >
-          Don't have an account? <Link to='/signup'>Create one</Link>
-        </p>
-        <p>or continue with</p>
-        <div className={styles.social_media}>
-          <img
-            src="https://a.travel-assets.com/egds/marks/apple.svg"
-            alt=""
-          />
-          <img
-            src="https://a.travel-assets.com/egds/marks/facebook.svg"
-            alt=""
-          />
+          <p className={styles.term_conditions}>
+            By creating an account, I agree to the Orbitz{' '}
+            <span>Terms and Conditions</span>,
+            <span>Privacy Statement</span> and{' '}
+            <span> Orbitz Rewards Terms and Conditions</span>.
+          </p>
         </div>
-      </div>
+        <div className={styles.end_div}>
+          <button disabled={
+            loginData.email && loginData.password
+              ? false
+              : true
+          } className={styles.button} type="submit">Continue</button>
+
+          <Link to=''>Forgot Password</Link>
+          <p >
+            Don't have an account? <Link to='/signup'>Create one</Link>
+          </p>
+          <p>or continue with</p>
+          <div className={styles.social_media}>
+            <img
+              src="https://a.travel-assets.com/egds/marks/apple.svg"
+              alt=""
+            />
+            <img
+              src="https://a.travel-assets.com/egds/marks/facebook.svg"
+              alt=""
+            />
+          </div>
+        </div>
+      </form>
+
+
     </div>
   )
 }
