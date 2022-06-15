@@ -33,16 +33,16 @@ const SignUp = () => {
             Keep me signed in
           </div>
   
-
           <p className={styles.term_conditions}>
             By creating an account, I agree to the Orbitz{' '}
             <span>Terms and Conditions</span>,
             <span>Privacy Statement</span> and{' '}
             <span> Orbitz Rewards Terms and Conditions</span>.
           </p>
+
         </div>
         <div className={styles.end_div}>
-          <input className={styles.button} type="submit" value={"Continue"} />
+          <button disabled className={styles.button} type="submit">Continue</button> 
          
 
           <p >
