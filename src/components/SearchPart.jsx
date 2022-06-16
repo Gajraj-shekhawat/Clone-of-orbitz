@@ -100,7 +100,7 @@ const SearchPart = () => {
                         <div className={styles.input_stays}>
                             <div style={{ position: "relative" }}>
                                 <MdLocationOn fontSize={'1.4rem'} />
-                                <input type="text" placeholder="Going to" onFocus={() => { setResult(true) }} value=""/>
+                                <input type="text" placeholder="Going to" onFocus={() => { setResult(true) }} defaultValue=""/>
 
                                 {result && <div className={styles.search_content}>
                                     <input type="text" name="" placeholder='Where are you going?' onChange={handleChnage} />

@@ -1,7 +1,9 @@
 import React from 'react'
-import SingleHotel from './styles/SingleHotel'
+import SingleHotel from './SingleHotel'
+import styles from './styles/allhotel.module.css';
 
-const AllHotels = () => {
+
+const AllHotels = ({data}) => {
     return (
         <div>
             <div>
@@ -20,7 +22,9 @@ const AllHotels = () => {
 
             </div>
             <div>
-                <SingleHotel/>
+                {data?.map(el => {
+                    return <SingleHotel key={el.id }{...el} />
+                })}
             </div>
         </div>
     )

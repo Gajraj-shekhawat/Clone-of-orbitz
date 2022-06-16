@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import styles from './styles/hotel.module.css';
 import { BsFillPersonFill } from 'react-icons/bs';
@@ -7,15 +7,23 @@ import { useParams } from 'react-router-dom';
 import FilteredPage from '../components/FilteredPage';
 import AllHotels from '../components/AllHotels';
 import BelowPart from '../components/BelowPart'
+import { useDispatch } from 'react-redux';
+import { fetch_hotel_data } from '../redux/hotel/action';
+import { useSelector } from 'react-redux';
 
 const Hotel = () => {
     const { id } = useParams();
 
-    const [data, setData] = useState([])
+
+
+    const dispatch = useDispatch()
+    const data = useSelector(state => state.hotel.data)
     
+
+
     useEffect(() => {
-        
-    },[])
+        dispatch(fetch_hotel_data(id))
+    }, [dispatch, id])
 
     return (
         <div>
@@ -57,15 +65,15 @@ const Hotel = () => {
                     </div>
                     <div className={styles.bodypart}>
                         <div>
-                            <FilteredPage hotel={ id} />
+                            <FilteredPage hotel={id} />
                         </div>
                         <div>
-                            <AllHotels hotel={id} />
+                            <AllHotels hotel={id} data={data } />
                         </div>
                     </div>
                 </div>
             </div>
-            <BelowPart/>
+            <BelowPart />
         </div>
     );
 };
