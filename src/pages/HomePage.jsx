@@ -12,7 +12,7 @@ const HomePage = () => {
             <SearchPart />
             <HomepageBody />
             <Footer />
-            <HelpBox/>
+            <HelpBox />
         </div>
     )
 }

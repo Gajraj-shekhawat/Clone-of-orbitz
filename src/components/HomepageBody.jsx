@@ -178,30 +178,30 @@ const HomepageBody = () => {
                 <div>
                     <div>
                         <h4>Destination deals</h4>
-                        <IoIosArrowDown style={{ cursor: "pointer", fontSize: "1.3rem" }}/>
+                        <IoIosArrowDown style={{ cursor: "pointer", fontSize: "1.3rem" }} />
                     </div>
                     <div>
                         <h4>Top hotel beach destination</h4>
-                        <IoIosArrowDown style={{ cursor: "pointer", fontSize: "1.3rem" }}/>
+                        <IoIosArrowDown style={{ cursor: "pointer", fontSize: "1.3rem" }} />
                     </div>
                     <div>
                         <h4>Top hotel city destination</h4>
-                        <IoIosArrowDown style={{ cursor: "pointer", fontSize: "1.3rem" }}/>
+                        <IoIosArrowDown style={{ cursor: "pointer", fontSize: "1.3rem" }} />
                     </div>
-                    
+
                 </div>
                 <div>
                     <div>
                         <h4>Top Vacation destination</h4>
-                        <IoIosArrowDown style={{ cursor: "pointer", fontSize: "1.3rem" }}/>
+                        <IoIosArrowDown style={{ cursor: "pointer", fontSize: "1.3rem" }} />
                     </div>
                     <div>
                         <h4>Top flight destination</h4>
-                        <IoIosArrowDown style={{ cursor: "pointer", fontSize: "1.3rem" }}/>
+                        <IoIosArrowDown style={{ cursor: "pointer", fontSize: "1.3rem" }} />
                     </div>
                     <div>
                         <h4>Top car rental destination in America</h4>
-                        <IoIosArrowDown style={{ cursor: "pointer", fontSize: "1.3rem" }}/>
+                        <IoIosArrowDown style={{ cursor: "pointer", fontSize: "1.3rem" }} />
                     </div>
                 </div>
             </div>

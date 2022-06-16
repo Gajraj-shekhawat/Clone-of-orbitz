@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import styles from './styles/signup.module.css';
-import { Link, useNavigate,  } from 'react-router-dom';
+import { Link, useNavigate, } from 'react-router-dom';
 import { signup_attemp } from '../redux/auth/action';
 const SignUp = () => {
   const initialState = {};
   const [form, setForm] = useState(initialState);
-  const navigate= useNavigate()
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();

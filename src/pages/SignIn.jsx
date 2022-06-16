@@ -5,7 +5,7 @@ import { signin_attemp } from '../redux/auth/action'
 import styles from './styles/signin.module.css'
 
 const SignIn = () => {
-  const auth = useSelector(state=>state.Auth.auth)
+  const auth = useSelector(state => state.Auth.auth)
 
 
   const dispatch = useDispatch()
@@ -19,7 +19,7 @@ const SignIn = () => {
   }
 
   if (auth) {
-    return <Navigate to='/'/>
+    return <Navigate to='/' />
   }
   return (
     <div className={styles.signin_container}>

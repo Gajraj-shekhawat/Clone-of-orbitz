@@ -367,16 +367,17 @@
 }
 
 .more_destination>div>div {
-    width:33%;
+    width: 33%;
     background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 15px 0 15px ;
+    padding: 0 15px 0 15px;
     box-sizing: border-box;
-    border-radius:5px
+    border-radius: 5px
 }
-.more_destination>div>div>h4{
-    color:#524d4d;
+
+.more_destination>div>div>h4 {
+    color: #524d4d;
     /* font-weight: 450; */
 }
