@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import styles from './styles/hotel.module.css';
 import { BsFillPersonFill } from 'react-icons/bs';
@@ -6,9 +6,17 @@ import { MdLocationOn } from 'react-icons/md';
 import { useParams } from 'react-router-dom';
 import FilteredPage from '../components/FilteredPage';
 import AllHotels from '../components/AllHotels';
+import BelowPart from '../components/BelowPart'
 
 const Hotel = () => {
     const { id } = useParams();
+
+    const [data, setData] = useState([])
+    
+    useEffect(() => {
+        
+    },[])
+
     return (
         <div>
             <Navbar />
@@ -49,14 +57,15 @@ const Hotel = () => {
                     </div>
                     <div className={styles.bodypart}>
                         <div>
-                            <FilteredPage />
+                            <FilteredPage hotel={ id} />
                         </div>
                         <div>
-                            <AllHotels />
+                            <AllHotels hotel={id} />
                         </div>
                     </div>
                 </div>
             </div>
+            <BelowPart/>
         </div>
     );
 };
