@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import styles from './styles/searchPart.module.css';
-import { BsFillPersonFill,  } from 'react-icons/bs';
+import { BsFillPersonFill, } from 'react-icons/bs';
 import { MdLocationOn } from 'react-icons/md';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios';
 const initialState = {
     stays: false,
@@ -24,13 +24,15 @@ const SearchPart = () => {
 
     const [query, setQuery] = useState('')
 
-    const [cityName,setCityName]=useState()
-    
+    const [cityName, setCityName] = useState()
+
     const handleChnage = (e) => {
         setQuery(e.target.value)
-        axios.get(`https://json-dummy-server-gajraj.herokuapp.com/hotel?q=${query}`).then(res => {
-            console.log(res.data)
-        })
+        if (query) {
+            axios.get(`https://json-dummy-server-gajraj.herokuapp.com/city?q=${query}`).then(res => {
+                setCityName(res.data)
+            })
+        }
 
     }
 
@@ -101,11 +103,14 @@ const SearchPart = () => {
                                 <input type="text" placeholder="Going to" onFocus={() => { setResult(true) }} />
 
                                 {result && <div className={styles.search_content}>
-                                    <input type="text" name="" placeholder='Where are you going?' onChange={handleChnage}/>
+                                    <input type="text" name="" placeholder='Where are you going?' onChange={handleChnage} />
                                     <hr />
-                                    <div>
-                                     <Link to=''></Link>
-                            
+                                    <div className={styles.citysearch}>
+                                        {cityName?.map(city => {
+                                            return <Link to='' key={city.id} >{city.name}</Link>
+                                        })}
+
+
                                     </div>
 
 
