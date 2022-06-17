@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const SingleHotel = ({ avatar, name, city, wifi, air_conditioned, hot_tub, refund, rating, review, price, total_price, reserve_with_pay_later }) => {
     return (
-        <Link to='' className={styles.link}>
+        <Link to='/payment' className={styles.link}>
 
             <div className={styles.mainBox}>
                 <div className={styles.hotel_pic}>
