@@ -7,11 +7,16 @@ import { MdOutlineFlight } from 'react-icons/md';
 import { BsFillInboxesFill } from 'react-icons/bs';
 
 import { BiChevronDown, BiChevronUp } from 'react-icons/bi';
+import { useSelector } from 'react-redux';
 
 
 const Navbar = () => {
   const [showMoreTravel, setShowMoreTravel] = useState(false);
   const [showSignIn, setShowSignIn] = useState(false);
+
+  const auth = useSelector(state => state.Auth.auth)
+
+
 
   return (
     <div className={styles.navbar_container}>
@@ -85,7 +90,7 @@ const Navbar = () => {
           <NavLink to="#">Trips</NavLink>
         </nav>
         {/* <section ref={ref}> */}
-        <div
+        {!auth && <div
           className={styles.signin}
           onClick={() => {
             setShowSignIn(!showSignIn);
@@ -121,7 +126,11 @@ const Navbar = () => {
               </div>
             </div>
           )}
-        </div>
+        </div>}
+        {auth && <div>
+        Sign out
+       
+        </div>}
         {/* </section> */}
       </div>
     </div>

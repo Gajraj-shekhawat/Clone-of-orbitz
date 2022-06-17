@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './styles/singlehotel.module.css';
 import { AiOutlineWifi } from "react-icons/ai"
 import { MdOutlineHotTub } from "react-icons/md"
+import { FaFan } from "react-icons/fa"
 import { Link } from 'react-router-dom';
 
 const SingleHotel = ({ avatar, name, city, wifi, air_conditioned, hot_tub, refund, rating, review, price, total_price, reserve_with_pay_later }) => {
@@ -22,7 +23,9 @@ const SingleHotel = ({ avatar, name, city, wifi, air_conditioned, hot_tub, refun
 
                         }
                         {hot_tub && <div> <MdOutlineHotTub /> Hot tub </div>}
-                        <p>{air_conditioned ? "Air conditioned" : null}</p>
+                        {air_conditioned && <div>
+                            <FaFan/>
+                            Air conditioned</div>}
                     </div>
                     <p>{refund ? "Fully refundable" : null}</p>
                     <p>{reserve_with_pay_later ? "Reserve now,pay later" : null}</p>
@@ -30,8 +33,8 @@ const SingleHotel = ({ avatar, name, city, wifi, air_conditioned, hot_tub, refun
                     <div className={styles.price_div}>
                         <div>{rating}{review}</div>
                         <div>
-                            <p>${price}</p>
-                            <p>${total_price}</p>
+                            <p>{price}</p>
+                            <p>{total_price}</p>
                         </div>
                     </div>
                 </div>

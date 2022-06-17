@@ -7,7 +7,7 @@ import SearchPart from '../components/SearchPart'
 
 const HomePage = () => {
     return (
-        <div style={{ display: "flex", flexDirection: "column" }}>
+        <div style={{ display: "flex", flexDirection: "column",overflowX:"hidden" }}>
             <Navbar />
             <SearchPart />
             <HomepageBody />
